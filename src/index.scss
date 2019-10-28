@@ -3,10 +3,10 @@
 a {
   color: #212529;
 }
-// 
-// a:hover {
-//   color: #808080;
-// }
+
+a:hover {
+  color: #808080;
+}
 
 html, body {
   height: 100%;
@@ -22,6 +22,20 @@ html, body {
   justify-content: center;
   margin: 16px;
   width: 130px;
+}
+
+.button-auth2 {
+  background-color: #708090;
+  border-color: #708090;
+  border-radius: 20px;
+  justify-content: center;
+  margin: 16px;
+  width: 130px;
+}
+
+.button-auth2:hover {
+  background-color: #808080;
+  border-color: #808080;
 }
 
 .button-auth-wide {

@@ -114,13 +114,11 @@ onSubmitSurvey = event => {
   if (this.state.timerTime === 0) {
     this.setState({ timer: this.state.timerStart
     }, () => {
-      console.log(this.state)
       this.sendSummary()
     })
   } else {
-    this.setState({ timer: this.state.timerTime
+    this.setState({ timer: (this.state.timerStart - this.state.timerTime)
     }, () => {
-      console.log(this.state)
       this.sendSummary()
     })
   }

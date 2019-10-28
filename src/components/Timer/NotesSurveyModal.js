@@ -60,6 +60,7 @@ class SurveyAfterPractice extends Component {
         </Modal.Body>
         <Modal.Footer>
           <Button
+            className='button-auth2'
             color="primary"
             type="submit"
             onClick={onSubmitSurvey}

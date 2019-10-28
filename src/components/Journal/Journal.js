@@ -74,7 +74,7 @@ class Journal extends Component {
     const { alert } = this.props
 
     const journalList = records.length ? (
-      records.map(record => {
+      records.reverse().map(record => {
         return (
           <Container className='journal-container' key={record.id}>
             <Row className='record-content'>

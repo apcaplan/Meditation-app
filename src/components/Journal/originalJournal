@@ -1,0 +1,94 @@
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { Container, Col, Row } from 'react-bootstrap'
+import { time, dayName, monthName, day, year, timerTimeConversion } from './DateTimeConversions'
+import { backHomeIcon } from '../GoHome'
+import { showHistory } from '../../api/records'
+
+class Journal extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      records: [],
+      error: null
+    }
+  }
+
+  display = () => {
+    showHistory(this.props.user)
+      .then(res => this.setState({ records: res.data.records }))
+      .catch(err => this.setState({ error: err.stack }))
+  }
+
+  componentDidMount () {
+    this.display()
+  }
+
+  render () {
+    const { records, error } = this.state
+
+    // Conditional for presenting note blurb in Journal summary
+    const noteBlurb = (params) => {
+      if (params.howFeel) {
+        return <p>{params.howFeel}</p>
+      } else if (params.meditationQualities) {
+        return <p>{params.meditationQualities}</p>
+      } else if (params.otherNotes) {
+        return <p>{params.otherNotes}</p>
+      }
+    }
+
+    const journalList = records.length ? (
+      records.map(record => {
+        return (
+          <Container className='' key={record.id}>
+            <Row className='record-content'>
+              <Link
+                to={{
+                  pathname: '/report/' + record.id,
+                  state: { id: record.id }
+                }}
+                onClick={console.log(event.target.response, this.state)}
+              >
+                <span className='record-title'>{record.id}</span>
+              </Link>
+              <Col md lg='2' className='text-center practiceDate'>
+                <p>{dayName(record.date)}</p>
+                <p>{day(record.date)}</p>
+                <p>{monthName(record.date)} {year(record.date)}</p>
+              </Col>
+              <Col md lg='auto'>
+                <p className='practiceTime'>{time(record.date)}</p>
+                <div className='practiceNotes'>
+                  {noteBlurb(record)}
+                </div>
+              </Col>
+              <Col md lg='2'>
+                <p className='practiceLength'>
+                  {timerTimeConversion(record.timer)}
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        )
+      })
+    ) : (
+      <div className='center'>No entries yet. Practice to create one!</div>
+    )
+
+    if (error) {
+      return <p className='recordless'>ERROR: { error }</p>
+    }
+
+    return (
+      <div className='container welcome'>
+        {backHomeIcon()}
+        <h1 className='center'>Practice Journal</h1>
+        {journalList}
+      </div>
+    )
+  }
+}
+
+export default Journal

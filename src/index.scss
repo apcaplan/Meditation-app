@@ -1,0 +1,198 @@
+@import '~bootstrap/scss/bootstrap';
+
+html, body {
+  height: 100%;
+}
+
+.page-body {
+  flex: 1 0 auto;
+  padding: 1.5em 0;
+  width: 100%;
+}
+
+.page-body:after {
+  content: '\00a0';
+  display: block;
+  margin-top: 1.5em;
+  height: 0;
+  visibility: hidden;
+}
+
+.footerBar {
+  align-items: flex-end;
+  bottom: 0;
+  display: flex;
+  height: 2.5rem;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.journal, .meditation, .settings, .profile {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-text {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  padding: 12em 2em 8em;
+}
+
+.timer-button {
+
+}
+
+.Button-start {
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  padding: 7em 2em 0;
+  width: 100%;
+}
+
+.Countdown-time {
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
+  width: 100%;
+}
+
+.setting {
+  align-items: center;
+  display: flex;
+  // flex-direction: column;
+  font-size: 20px;
+  justify-content: center;
+  // margin-left: 2.7em;
+  margin-top: 2em;
+  // margin: 2em auto 0 auto;
+  width: 100%;
+}
+
+.setting-label {
+  flex: 3;
+}
+
+.setting-setting {
+  flex: 3;
+}
+
+.wrapper {
+  align-items: center;
+  color: 4a4e69;
+  display: flex;
+  flex-direction: column;
+  height: 97vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-wrapper {
+  background-color: fefefe;
+  border-radius: 6px;
+  box-shadow: 0 8px 36px 222;
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  min-height: 400px;
+  min-width: 100px;
+  padding: 20px 40px;
+  width: 280px;
+}
+
+Form {
+  // display: flex;
+  // flex-wrap: wrap;
+  // width: 100%;
+}
+
+.record-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.timerDisplay {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.timerDisplay :first-child {
+  float: left;
+  padding: 40px;
+}
+
+.timerDisplay :last-child {
+  float: right;
+  padding: 40px;
+}
+
+.journalHeading {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.backHomeIcon {
+  padding: 1em;
+  padding-top: 2.5em;
+}
+
+.settingsMenu {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+
+}
+
+.settingsMenu .changePassword {
+  margin-top: 4rem;
+}
+
+.settingsMenu div {
+  margin: 20px;
+}
+
+.settingsMenu div a {
+  padding: 20px;
+}
+
+.setTimer-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.setTimer-label {
+  font-size: 2.2rem;
+}
+
+.setTimer-time {
+  font-size: 4rem;
+  }
+
+.setTimer-display {
+  font-size: 3rem;
+}
+
+.setTimer-display button {
+  margin: 0 24px;
+  padding: 0 14px;
+}

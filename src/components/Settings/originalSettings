@@ -1,0 +1,74 @@
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { Form } from 'react-bootstrap'
+import SetTimerModal from './SetTimer'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faKey, faDoorOpen } from '@fortawesome/free-solid-svg-icons'
+import { backHomeIcon } from '../GoHome'
+
+class Settings extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      timerTime: 0,
+      modalShow: false
+    }
+  }
+
+  toggleModal = () => {
+    this.setState({
+      modalShow: !this.state.modalShow
+    })
+  }
+
+  onSubmitSetTimer = () => {
+    console.log('hi!')
+  }
+
+  render () {
+    return (
+      <div>
+        <div className='backHomeButton'>
+          {backHomeIcon()}
+        </div>
+        <div className='welcome'>
+          <h1 className='intro-text'>Timer Settings</h1>
+          <div className='timer-settings'>
+            <div className='setting'>
+              <Form>
+                <div className='timerDisplay'>
+                  <h3>Duration</h3>
+                  <a onClick={this.toggleModal} style={{ cursor: 'pointer' }}>
+                    <h3 onClick={this.toggleModal}>{this.state.timerTime}</h3>
+                  </a>
+                </div>
+                <Form.Check type='switch'>
+                  <Form.Label>Starting Bell</Form.Label>
+                </Form.Check>
+                <Form.Check type='switch'>
+                  <Form.Label>Ending Bell</Form.Label>
+                </Form.Check>
+              </Form>
+
+              <SetTimerModal
+                state={this.state}
+                onHide={this.toggleModal}
+                onSubmit={this.onSubmitSetTimer} />
+            </div>
+          </div>
+          <div className='changePassword'>
+            <FontAwesomeIcon icon={ faKey } size='2x' />
+            <Link to="/change-password">Change Password</Link>
+          </div>
+          <div className='changePassword'>
+            <FontAwesomeIcon icon={ faDoorOpen } size='2x' />
+            <Link to="/sign-out">Sign Out</Link>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default Settings

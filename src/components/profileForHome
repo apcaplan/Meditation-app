@@ -1,0 +1,4 @@
+<div className='profile'>
+  <FontAwesomeIcon icon={ faUser } size='2x' />
+  <Link to="/profile">Profile</Link>
+</div>

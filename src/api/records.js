@@ -92,17 +92,4 @@ export const destroy = (id, user) => {
     headers: { Authorization: `Token token=${user.token}` },
     method: 'DELETE'
   })
-    .then(() => alert({
-      heading: 'Successfully Deleted Record',
-      message: messages.destroySuccess,
-      variant: 'success'
-    }))
-    .catch(error => {
-      console.error(error)
-      alert({
-        heading: 'Delete Record Failed',
-        message: messages.destroyFailure,
-        variant: 'failed'
-      })
-    })
 }

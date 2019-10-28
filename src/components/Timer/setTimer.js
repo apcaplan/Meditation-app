@@ -20,7 +20,7 @@ class SetTimer extends Component {
         centered
         onHide={onHide}
       >
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title id='contained-modal-title-vcenter'>
           Set the timer for your practice
           </Modal.Title>

@@ -1,0 +1,6 @@
+<Link to={`/records/${record.id}/edit-record`}>
+  <FontAwesomeIcon icon={ faPencilAlt } />
+</Link>
+
+
+...for Journal.js

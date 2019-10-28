@@ -27,8 +27,8 @@ class ChangePassword extends Component {
 
     changePassword(this.state, user)
       .then(() => alert({
-        heading: 'Change Password Success',
-        message: messages.changePasswordSuccess,
+        heading: 'Password changed successfully!',
+        // message: messages.changePasswordSuccess,
         variant: 'success'
       }))
       .then(() => history.push('/settings'))
@@ -51,8 +51,8 @@ class ChangePassword extends Component {
         <div className='backHomeButton'>
           {backHomeIcon()}
         </div>
-        <div className="row">
-          <div className="col-sm-10 col-md-8 mx-auto mt-5">
+        <div className="changePW-form row">
+          <div className="form-wrapper2">
             <h3>Change Password</h3>
             <Form onSubmit={this.onChangePassword}>
               <Form.Group controlId="oldPassword">
@@ -62,7 +62,7 @@ class ChangePassword extends Component {
                   name="oldPassword"
                   value={oldPassword}
                   type="password"
-                  placeholder="Old Password"
+                  placeholder="Enter old password"
                   onChange={this.handleChange}
                 />
               </Form.Group>
@@ -73,11 +73,12 @@ class ChangePassword extends Component {
                   name="newPassword"
                   value={newPassword}
                   type="password"
-                  placeholder="New Password"
+                  placeholder="Enter new password"
                   onChange={this.handleChange}
                 />
               </Form.Group>
               <Button
+                className='button-auth'
                 variant="primary"
                 type="submit"
               >

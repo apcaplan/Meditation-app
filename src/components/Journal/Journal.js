@@ -5,7 +5,8 @@ import { time, dayName, monthName, day, year, timerTimeConversion } from './Date
 import { backHomeIcon } from '../GoHome'
 import { showHistory, destroy } from '../../api/records'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash, faPencilAlt } from '@fortawesome/free-solid-svg-icons'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+// import messages from '../Auth/AutoDismissAlert/messages'
 
 class Journal extends Component {
   constructor (props) {
@@ -70,39 +71,52 @@ class Journal extends Component {
     //   }
     // }
 
+    const { alert } = this.props
+
     const journalList = records.length ? (
       records.map(record => {
         return (
-          <Container className='' key={record.id}>
+          <Container className='journal-container' key={record.id}>
             <Row className='record-content'>
-              <Col md='2' className='text-center practiceDate'>
+              <Col md='2' className='journal-practiceDate'>
                 <p>{dayName(record.date)}</p>
                 <p>{day(record.date)}</p>
-                <p>{monthName(record.date)} {year(record.date)}</p>
+                <p>{monthName(record.date)} </p>
+                <p>{year(record.date)}</p>
               </Col>
-              <Col sm='2'>
-                <p className='practiceTime'>{time(record.date)}</p>
+              <Col md='2'>
+                <p className='journal-practiceTime'>{time(record.date)}</p>
               </Col>
-              <Col md lg='auto'>
-                <div className='practiceNotes'>
+              <Col md lg='4'>
+                <div className='journal-practiceNotes'>
                   {noteBlurbA(record)}
                   {noteBlurbB(record)}
                   {noteBlurbC(record)}
                 </div>
               </Col>
-              <Col md='3'>
-                <p className='practiceLength'>
+              <Col md='2'>
+                <p className='journal-practiceLength'>
                   {timerTimeConversion(record.timer)}
                 </p>
               </Col>
-              <Col sm='1'>
-                <Link to={`/records/${record.id}/edit-record`}>
-                  <FontAwesomeIcon icon={ faPencilAlt } />
-                </Link>
+              <Col md='1'>
                 <Link to="/welcome">
-                  <FontAwesomeIcon icon={ faTrash } onClick={() => {
+                  <FontAwesomeIcon className='trashIcon' icon={ faTrash } onClick={() => {
                     destroy(record.id, this.props.user)
                       .then(this.display())
+                      .then(() => alert({
+                        heading: 'Successfully deleted record',
+                        // message: messages.destroySuccess,
+                        variant: 'success'
+                      }))
+                      .catch(error => {
+                        console.error(error)
+                        alert({
+                          heading: 'Delete record failed',
+                          // message: messages.destroyFailure,
+                          variant: 'failed'
+                        })
+                      })
                   }}
                   />
                 </Link>

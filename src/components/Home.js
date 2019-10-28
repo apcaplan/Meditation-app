@@ -11,18 +11,18 @@ const Welcome = ({ user }) => (
     <div className='page-body'>
     </div>
     <div className='footerBar'>
-      <div className='journal'>
+      <Link to="/practice-journal" className='journal'>
         <FontAwesomeIcon icon={ faBookOpen } size='2x' />
-        <Link to="/practice-journal">Journal</Link>
-      </div>
-      <div className='meditation'>
+        <p>Journal</p>
+      </Link>
+      <Link to="/set-timer" className='meditation'>
         <FontAwesomeIcon icon={ faCloud } size='2x' />
-        <Link to="/set-timer">Meditation</Link>
-      </div>
-      <div className='settings'>
+        <p>Meditation</p>
+      </Link>
+      <Link to="/settings" className='settings'>
         <FontAwesomeIcon icon={ faCog } size='2x' />
-        <Link to="/settings">Settings</Link>
-      </div>
+        <p>Settings</p>
+      </Link>
     </div>
   </div>
 )

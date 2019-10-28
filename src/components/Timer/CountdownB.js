@@ -6,6 +6,7 @@ import sound from './clock-chimes-daniel_simon.mp3'
 import { recordPractice } from '../../api/records'
 import messages from '../Auth/AutoDismissAlert/messages'
 import { withRouter } from 'react-router'
+import { backHomeIcon } from '../GoHome'
 
 class CountdownB extends Component {
   constructor (props) {
@@ -86,14 +87,15 @@ finishTimer = (props) => {
 }
 
 sendSummary = () => {
-  recordPractice(this.state, this.props.user)
+  const { alert, history, user } = this.props
+  recordPractice(this.state, user)
     .then(() => alert({
-      heading: 'successfully logged your practice!',
-      message: messages.submitSurveySuccess,
+      heading: 'Successfully logged your practice!',
+      // message: messages.submitSurveySuccess,
       variant: 'success'
     }))
     .then(this.toggleModal())
-    .then(() => this.props.history.push('/welcome'))
+    .then(() => history.push('/welcome'))
     .catch(error => {
       console.error(error)
       alert({
@@ -138,6 +140,7 @@ render () {
 
   return (
     <div className='welcome'>
+      { backHomeIcon() }
       <h1 className='intro-text'>Meditation</h1>
       <div className='timer'>
         <div className='Timer'>
@@ -150,25 +153,29 @@ render () {
           {timerOn === false && (timerStart === 0 || timerTime === timerStart) && (
             <button className="Button-start" onClick={this.startTimer}>Start</button>
           )}
+
           {timerOn === true && timerTime >= 1000 && (
             <button className="Button-stop" onClick={this.stopTimer}>Stop</button>
           )}
 
-          {timerOn === false &&
-           (timerStart !== 0 && timerStart !== timerTime && timerTime !== 0) && (
-            <button className="Button-start" onClick={this.startTimer}>Resume</button>
-          )}
+          <div className='Buttons-timer'>
+            {timerOn === false &&
+             (timerStart !== 0 && timerStart !== timerTime && timerTime !== 0) && (
+              <button className="Button-start" onClick={this.startTimer}>Resume</button>
+            )}
 
-          {(timerOn === false || timerTime < 1000) &&
-           (timerStart !== timerTime && timerStart > 0) && (
-            <button className="Button-reset" onClick={this.discardTimer}>Discard Session</button>
-          )}
+            <div className="Buttons-DandF">
+              {(timerOn === false || timerTime < 1000) &&
+               (timerStart !== timerTime && timerStart > 0) && (
+                <button className="Button-discard" onClick={this.discardTimer}>Discard Session</button>
+              )}
 
-          {(timerOn === false || timerTime < 1000) &&
-           (timerStart !== timerTime && timerStart > 0) && (
-            <button className="Button-reset" onClick={this.finishTimer}>Finish</button>
-          )}
-
+              {(timerOn === false || timerTime < 1000) &&
+               (timerStart !== timerTime && timerStart > 0) && (
+                <button className="Button-finish" onClick={this.finishTimer}>Finish</button>
+              )}
+            </div>
+          </div>
           <audio id="alarm" src={ sound } preload="auto" />
 
           <SurveyAfterPractice

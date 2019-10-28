@@ -33,14 +33,14 @@ class Settings extends Component {
         <div className='welcome'>
           <h1 className='intro-text'>Settings</h1>
           <div className="settingsMenu">
-            <div className='changePassword'>
+            <Link to="/change-password" className='changePassword'>
               <FontAwesomeIcon icon={ faKey } size='2x' />
-              <Link to="/change-password">Change Password</Link>
-            </div>
-            <div className='signOut'>
+              <p>Change Password</p>
+            </Link>
+            <Link to="/sign-out" className='signOut'>
               <FontAwesomeIcon icon={ faDoorOpen } size='2x' />
-              <Link to="/sign-out">Sign Out</Link>
-            </div>
+              <p>Sign Out</p>
+            </Link>
           </div>
         </div>
       </div>

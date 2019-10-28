@@ -1,7 +1,204 @@
 @import '~bootstrap/scss/bootstrap';
 
+a {
+  color: #212529;
+}
+// 
+// a:hover {
+//   color: #808080;
+// }
+
 html, body {
   height: 100%;
+}
+
+.backHomeIcon {
+  padding: 1em;
+  padding-top: 2.5em;
+}
+
+.button-auth {
+  border-radius: 20px;
+  justify-content: center;
+  margin: 16px;
+  width: 130px;
+}
+
+.button-auth-wide {
+  border-radius: 20px;
+  justify-content: center;
+  margin: 16px;
+  width: 160px;
+}
+
+.Buttons-DandF {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+  justify-content: center;
+  margin-left: 4.3em;
+  margin-top: 2em;
+  width: 40%;
+}
+
+.Button-discard, .Button-finish {
+    border-radius: 20px;
+    margin: 5px;
+    margin-left: 40px;
+}
+
+.Button-discard {
+  background-color: #808080;
+  padding: 6px;
+}
+
+.Button-finish {
+  background-color: #808080;
+  padding: 0 16px;
+}
+
+.Button-start {
+  align-items: center;
+  background-color: #708090;
+  border-radius: 20px;
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  margin-top: 7em;
+  padding: 3px;
+  width: 75%;
+}
+
+.Button-stop {
+  background-color: #708090;
+  border-radius: 20px;
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  margin-top: 7em;
+  margin-right: 4em;
+  padding: 3px;
+  width: 75%;
+}
+
+.Buttons-timer {
+  margin-left: 40px;
+}
+
+.changePassword p {
+  margin-bottom: 0;
+  margin-left: 12px;
+  margin-top: 1rem;
+}
+
+.changePW-form {
+  align-items: center;
+  flex-direction: column;
+  margin-top: 6rem;
+}
+
+.Countdown-time {
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
+  width: 100%;
+}
+
+.footerBar {
+  align-items: flex-end;
+  bottom: 0;
+  color: #212529;
+  display: flex;
+  height: 2.5rem;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.form-wrapper {
+  align-items: center;
+  background-color: fefefe;
+  border-radius: 6px;
+  box-shadow: 0 8px 36px 222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 80%;
+  min-height: 400px;
+  min-width: 100px;
+  padding: 20px 40px;
+  width: 280px;
+}
+
+.form-wrapper h3, .form-wrapper2 h3 {
+  padding: 20px;
+}
+
+.form-wrapper2 {
+  align-items: center;
+  background-color: fefefe;
+  border-radius: 6px;
+  box-shadow: 0 8px 36px 222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 80%;
+  min-height: 400px;
+  min-width: 100px;
+  padding: 20px 40px;
+  width: 350px;
+}
+
+.intro-text {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.journal, .meditation, .settings, .profile {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-container {
+  background-color: transparent;
+  border-collapse: separate;
+  border-radius: 25px;
+  border-spacing: 0;
+  box-shadow: 0px 0px 36px 15px rgba(0, 0, 0, 0.6);
+  margin: 30px auto;
+}
+
+.journal-practiceDate {
+  align-items: center;
+  flex-direction: vertical;
+  justify-content: center;
+}
+
+.journal-practiceDate p {
+  display: flex;
+  font-size: 16px;
+  justify-content: center;
+  line-height: 10px;
+  margin-left: 1em;
+  margin-top: 12px;
+}
+
+.journal-practiceNotes {
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+}
+
+.journal-practiceNotes p {
+  line-height: 15px;
+  margin-top: 12px;
+}
+
+.journalHeading {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
 }
 
 .page-body {
@@ -13,63 +210,42 @@ html, body {
 .page-body:after {
   content: '\00a0';
   display: block;
-  margin-top: 1.5em;
   height: 0;
+  margin-top: 1.5em;
   visibility: hidden;
 }
 
-.footerBar {
-  align-items: flex-end;
-  bottom: 0;
+.record-content {
+  align-items: center;
   display: flex;
-  height: 2.5rem;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: center;
 }
 
-.journal, .meditation, .settings, .profile {
+.setTimer-container {
   align-items: center;
   display: flex;
   flex-direction: column;
-}
-
-.intro-text {
-  align-items: flex-start;
-  display: flex;
   justify-content: center;
-  margin-top: 2em;
 }
 
-.welcome {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+.setTimer-display {
+  font-size: 3rem;
 }
 
-.timer {
-  display: flex;
-  justify-content: center;
-  padding: 12em 2em 8em;
+.setTimer-display button {
+  background-color: white;
+  border: 0;
+  margin: 0 24px;
+  padding: 0 14px;
 }
 
-.timer-button {
-
+.setTimer-label {
+  font-size: 2.2rem;
 }
 
-.Button-start {
-  display: flex;
-  font-size: 30px;
-  justify-content: center;
-  padding: 7em 2em 0;
-  width: 100%;
-}
-
-.Countdown-time {
-  display: flex;
-  font-size: 50px;
-  justify-content: center;
-  width: 100%;
-}
+.setTimer-time {
+  font-size: 4rem;
+  }
 
 .setting {
   align-items: center;
@@ -91,39 +267,67 @@ html, body {
   flex: 3;
 }
 
-.wrapper {
-  align-items: center;
-  color: 4a4e69;
-  display: flex;
-  flex-direction: column;
-  height: 97vh;
-  justify-content: center;
-  width: 100%;
-}
-
-.form-wrapper {
-  background-color: fefefe;
-  border-radius: 6px;
-  box-shadow: 0 8px 36px 222;
-  display: flex;
-  flex-direction: column;
-  max-width: 80%;
-  min-height: 400px;
-  min-width: 100px;
-  padding: 20px 40px;
-  width: 280px;
-}
-
-Form {
-  // display: flex;
-  // flex-wrap: wrap;
-  // width: 100%;
-}
-
-.record-content {
+.settingsMenu {
   align-items: center;
   display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+
+  .settingsMenu .changePassword {
+    display: flex;
+    margin-top: 4rem;
+  }
+
+  .settingsMenu .signOut {
+    display: flex;
+    margin-top: 4rem;
+  }
+
+  // .settingsMenu div {
+  //   margin: 20px;
+  // }
+
+  // .settingsMenu div a {
+  //   padding: 20px;
+  // }
+
+.signIn, .signUp {
+  align-items: center;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
   justify-content: center;
+  left: 50%;
+  margin: 0;
+  margin-right: -50%;
+  max-width: 450px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+}
+
+.signIn-form, .signUp-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.signOut p {
+  margin-bottom: 0;
+  margin-left: 16px;
+  margin-top: 1rem;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  padding: 12em 2em 8em;
+}
+
+.Timer button {
+  margin-left: 35px;
 }
 
 .timerDisplay {
@@ -142,57 +346,24 @@ Form {
   padding: 40px;
 }
 
-.journalHeading {
-  display: flex;
-  justify-content: center;
-  padding: 1em;
+.trashIcon {
+  color: darkslategray;
+  margin-right: 1em;
+  margin-bottom: 0.8em;
 }
 
-.backHomeIcon {
-  padding: 1em;
-  padding-top: 2.5em;
-}
-
-.settingsMenu {
-  align-items: center;
+.welcome {
   display: flex;
   flex-direction: column;
-  font-size: 1.2rem;
-
+  min-height: 100vh;
 }
 
-.settingsMenu .changePassword {
-  margin-top: 4rem;
-}
-
-.settingsMenu div {
-  margin: 20px;
-}
-
-.settingsMenu div a {
-  padding: 20px;
-}
-
-.setTimer-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.setTimer-label {
-  font-size: 2.2rem;
-}
-
-.setTimer-time {
-  font-size: 4rem;
-  }
-
-.setTimer-display {
-  font-size: 3rem;
-}
-
-.setTimer-display button {
-  margin: 0 24px;
-  padding: 0 14px;
-}
+// .wrapper {
+//   align-items: center;
+//   color: 4a4e69;
+//   display: flex;
+//   // flex-direction: column;
+//   // height: 97vh;
+//   justify-content: center;
+//   width: 100%;
+// }

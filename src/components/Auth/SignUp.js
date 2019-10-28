@@ -51,10 +51,10 @@ class SignUp extends Component {
     const { email, password, passwordConfirmation } = this.state
 
     return (
-      <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
+      <div className="signUp row">
+        <div className="form-wrapper">
           <h3>Sign Up</h3>
-          <Form onSubmit={this.onSignUp}>
+          <Form className='signUp-form' onSubmit={this.onSignUp}>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -73,7 +73,7 @@ class SignUp extends Component {
                 name="password"
                 value={password}
                 type="password"
-                placeholder="Password"
+                placeholder="Enter password"
                 onChange={this.handleChange}
               />
             </Form.Group>
@@ -89,20 +89,14 @@ class SignUp extends Component {
               />
             </Form.Group>
             <Button
+              className='button-auth-wide'
               variant="primary"
               type="submit"
             >
               Create Account
             </Button>
           </Form>
-          <Link to='/'>
-            <Button
-              variant="secondary"
-              type=""
-            >
-            Sign In
-            </Button>
-          </Link>
+          <p>Already registered? <Link style={{ color: '#007BFF' }} to="/">Sign in</Link>!</p>
         </div>
       </div>
     )

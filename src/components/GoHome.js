@@ -7,7 +7,7 @@ export const backHomeIcon = () => {
   return (
     <div className="backHomeIcon">
       <Link to="/welcome">
-        <FontAwesomeIcon icon={ faChevronCircleLeft } size='2x' />
+        <FontAwesomeIcon icon={ faChevronCircleLeft } color='#6c757d' size='2x' />
       </Link>
     </div>
   )

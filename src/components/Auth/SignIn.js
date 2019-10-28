@@ -28,11 +28,6 @@ class SignIn extends Component {
 
     signIn(this.state)
       .then(res => setUser(res.data.user))
-      .then(() => alert({
-        heading: 'Sign In Success',
-        message: messages.signInSuccess,
-        variant: 'success'
-      }))
       .then(() => history.push('/welcome'))
       .catch(error => {
         console.error(error)
@@ -49,10 +44,10 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <div className="wrapper row">
+      <div className="signIn wrapper row">
         <div className="form-wrapper">
           <h3>Sign In</h3>
-          <Form onSubmit={this.onSignIn}>
+          <Form className='signIn-form' onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -71,18 +66,19 @@ class SignIn extends Component {
                 name="password"
                 value={password}
                 type="password"
-                placeholder="Password"
+                placeholder="Enter password"
                 onChange={this.handleChange}
               />
             </Form.Group>
             <Button
+              className='button-auth'
               variant="primary"
               type="submit"
             >
               Submit
             </Button>
           </Form>
-          <h5>Don&apos;t have an account?<Link to="/sign-up"> Sign up!</Link></h5>
+          <p>No account? Sign up <Link style={{ color: '#007BFF' }} to="/sign-up">here</Link>!</p>
         </div>
       </div>
     )

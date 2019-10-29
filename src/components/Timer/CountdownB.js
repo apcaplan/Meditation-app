@@ -26,7 +26,6 @@ class CountdownB extends Component {
   }
 
   handleChange = event => {
-    console.log('handleChange!')
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -81,9 +80,7 @@ discardTimer = () => {
 }
 
 finishTimer = (props) => {
-  const { user } = this.props
   this.setState({ modalShow: true })
-  console.log(props, user)
 }
 
 sendSummary = () => {

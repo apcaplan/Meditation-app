@@ -20,10 +20,6 @@ class Settings extends Component {
     })
   }
 
-  onSubmitSetTimer = () => {
-    console.log('hi!')
-  }
-
   render () {
     return (
       <div>

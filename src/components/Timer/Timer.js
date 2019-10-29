@@ -43,10 +43,7 @@ class Timer extends Component {
   }
 
   saveTimerSet = () => {
-    console.log(this.state.timerSet)
     this.toggleModal()
-    console.log(this.props)
-    console.log(this.props.history)
     this.props.history.push({
       pathname: '/timer',
       state: { timerSet: this.state.timerSet }

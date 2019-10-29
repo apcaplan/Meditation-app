@@ -5,11 +5,6 @@ import Button from 'react-bootstrap/Button'
 
 class Report extends Component {
   render (props) {
-    console.log(this.props)
-    console.log(this.state)
-    console.log(event.target.response)
-    console.log(this.record)
-    console.log(history.location)
     return (
       <div>
         <Link to='/practice-journal'>

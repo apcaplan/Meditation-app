@@ -1,6 +1,6 @@
 let apiUrl
 const apiUrls = {
-  production: 'https://quiet-tundra-41293.herokuapp.com',
+  production: 'https://git.heroku.com/meditation-app-api.git',
   development: 'http://localhost:4741'
 }
 

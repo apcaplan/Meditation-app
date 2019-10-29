@@ -14,7 +14,6 @@ import Report from '../Journal/Report'
 import Timer from '../Timer/Timer'
 import Countdown from '../Timer/CountdownB'
 import Settings from '../Settings/Settings'
-import Profile from '../Profile/Profile'
 
 class App extends Component {
   constructor () {
@@ -77,9 +76,6 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/settings' render={() => (
             <Settings user={user} />
-          )} />
-          <AuthenticatedRoute user={user} path='/profile' render={() => (
-            <Profile user={user} />
           )} />
         </main>
       </Fragment>

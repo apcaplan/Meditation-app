@@ -43,7 +43,7 @@ class SurveyAfterPractice extends Component {
                 onChange={handleChange}
               />
               <Form.Text className="text-muted">
-                For example: &rdquo;inert + unclear&rdquo;, &rdquo;agitated mind&rdquo;, &rdquo;calm + luminous&rdquo;, &ldquo;focused&rdquo;
+                For example: &rdquo;calm + luminous&rdquo;, &rdquo;inert + unclear&rdquo;, &rdquo;agitated mind&rdquo;, &ldquo;focused&rdquo;
               </Form.Text>
             </Form.Group>
             <Form.Group controlId="otherNotes">
